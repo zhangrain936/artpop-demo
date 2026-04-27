@@ -30,7 +30,7 @@ export function MobileApp() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  if (loading) return <div className="h-screen w-full flex items-center justify-center bg-zinc-100 min-h-screen">加载中...</div>;
+  if (loading) return <div className="h-screen w-full flex items-center justify-center bg-[#F8F8F8] min-h-screen">加载中...</div>;
   if (!user) return <Navigate to="/login" replace />;
   if (user.role === 'admin') return <Navigate to="/admin" replace />;
 
@@ -53,16 +53,16 @@ export function MobileApp() {
 
   return (
     <div className="min-h-screen bg-zinc-200 flex items-center justify-center sm:p-4 font-sans">
-      <div className="w-full min-h-screen sm:min-h-0 sm:w-[414px] sm:h-[896px] bg-white sm:rounded-[3rem] sm:shadow-2xl overflow-hidden relative flex flex-col sm:border-[8px] sm:border-zinc-900">
+      <div className="w-full min-h-screen sm:min-h-0 sm:w-[414px] sm:h-[896px] bg-[#FAF9F5] sm:rounded-[3rem] sm:shadow-2xl overflow-hidden relative flex flex-col sm:border-[8px] sm:border-[#1A1A1A]">
         
         <ScrollToTop />
-        <div id="mobile-scroll-container" className="flex-1 overflow-y-auto bg-white pb-16 no-scrollbar relative">
+        <div id="mobile-scroll-container" className="flex-1 overflow-y-auto bg-[#FAF9F5] pb-16 no-scrollbar relative">
           <Routes>
             <Route path="/" element={<MobileHome />} />
             <Route path="/search" element={<MobileSearch />} />
             <Route path="/cart" element={<MobileCart />} />
             <Route path="/category" element={<MobileCategory />} />
-            <Route path="/messages" element={<div className="p-8 text-center mt-20 text-zinc-400">消息功能开发中...</div>} />
+            <Route path="/messages" element={<div className="p-8 text-center mt-20 text-[#999999]">消息功能开发中...</div>} />
             <Route path="/product/:id" element={<MobileDetail />} />
             <Route path="/author/:id" element={<MobileAuthor />} />
             <Route path="/favorites" element={<MobileFavorites />} />
@@ -76,7 +76,7 @@ export function MobileApp() {
         </div>
 
         {showTabBar && (
-          <div className="absolute bottom-0 left-0 right-0 h-[83px] pb-5 bg-white/95 backdrop-blur-xl border-t border-zinc-100/80 flex items-center justify-around px-2 z-50">
+          <div className="absolute bottom-0 left-0 right-0 h-[83px] pb-5 bg-[#FAF9F5]/95 backdrop-blur-xl border-t border-[#E0E0E0]/80 flex items-center justify-around px-2 z-50">
             {_tabs.map(tab => {
               const active = location.pathname === tab.path || (tab.path !== '/' && location.pathname.startsWith(tab.path));
               const Icon = tab.icon;
@@ -86,10 +86,10 @@ export function MobileApp() {
                    onClick={() => navigate(tab.path)}
                    className="flex flex-col items-center justify-center w-full h-full pt-1 space-y-1 relative"
                  >
-                   <div className={`transition-all duration-300 ease-out flex items-center justify-center w-12 h-8 rounded-full ${active ? 'bg-zinc-100 text-zinc-900 scale-100' : 'text-zinc-400 scale-95'}`}>
+                   <div className={`transition-all duration-300 ease-out flex items-center justify-center w-12 h-8 rounded-full ${active ? 'bg-[#F8F8F8] text-[#C5A059] scale-100' : 'text-[#999999] scale-95'}`}>
                       <Icon size={active ? 22 : 24} strokeWidth={active && tab.icon !== UserIcon ? 2.5 : 1.75} fill={active && tab.icon === UserIcon ? 'currentColor' : 'none'} />
                    </div>
-                   <span className={`text-[10px] tracking-wide transition-colors ${active ? 'font-bold text-zinc-900' : 'font-medium text-zinc-400'}`}>
+                   <span className={`text-[10px] tracking-wide transition-colors ${active ? 'font-bold text-[#1A1A1A]' : 'font-medium text-[#999999]'}`}>
                      {tab.label}
                    </span>
                  </button>

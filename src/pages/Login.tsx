@@ -36,20 +36,20 @@ export function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-zinc-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-[#F8F8F8] px-4">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-900">登录</h1>
-          <p className="text-zinc-500">艺术生原创画作B2C交易平台</p>
+          <h1 className="text-3xl font-bold tracking-tight text-[#1A1A1A]">登录</h1>
+          <p className="text-[#666666]">艺术生原创画作B2C交易平台</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-zinc-700 mb-1">账号 (测试内置)</label>
+            <label className="block text-sm font-medium text-[#666666] mb-1">账号 (测试内置)</label>
             <select 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-zinc-900 focus:outline-none bg-zinc-50"
+              className="w-full px-4 py-2 border border-[#E0E0E0] rounded-lg focus:ring-2 focus:ring-[#1A1A1A] focus:outline-none bg-[#F8F8F8]"
             >
               <option value="buyer@demo.com">普通用户张三 (buyer@demo.com)</option>
               <option value="student@demo.com">艺术生李四 (student@demo.com)</option>
@@ -57,21 +57,21 @@ export function Login() {
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-zinc-700 mb-1">密码</label>
+            <label className="block text-sm font-medium text-[#666666] mb-1">密码</label>
             <input 
               type="password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-zinc-200 rounded-lg focus:ring-2 focus:ring-zinc-900 focus:outline-none bg-zinc-50"
+              className="w-full px-4 py-2 border border-[#E0E0E0] rounded-lg focus:ring-2 focus:ring-[#1A1A1A] focus:outline-none bg-[#F8F8F8]"
               readOnly
             />
           </div>
 
-          {error && <div className="text-red-500 text-sm font-medium text-center">{error}</div>}
+          {error && <div className="text-[#D32F2F] text-sm font-medium text-center">{error}</div>}
 
           <button 
             type="submit" 
-            className="w-full bg-zinc-900 text-white rounded-lg py-3 font-medium hover:bg-zinc-800 transition flex items-center justify-center gap-2"
+            className="w-full bg-[#1A1A1A] text-white rounded-lg py-3 font-medium hover:bg-[#1A1A1A] transition flex items-center justify-center gap-2"
           >
             <LogIn size={18} />
             进入系统
